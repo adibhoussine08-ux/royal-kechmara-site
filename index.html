@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Royal Kechmara — Restaurant Marocain · Les Pennes-Mirabeau</title>
-<meta name="description" content="Royal Kechmara, restaurant marocain halal à Les Pennes-Mirabeau. Buffet à volonté midi & soir, brunch du dimanche, carte après-midi, soirées thématiques du vendredi. Réservation en ligne.">
+<meta name="description" content="Royal Kechmara, restaurant marocain halal à Les Pennes-Mirabeau. Buffet à volonté midi & soir, brunch du dimanche, carte après-midi, soirées thématiques du samedi. Réservation en ligne.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
@@ -244,6 +244,11 @@
   .avis .stars{color:var(--or); letter-spacing:3px; font-size:.9rem; margin-bottom:14px;}
   .avis p{color:var(--creme-dim); font-size:.9rem; font-style:italic;}
   .avis .who{margin-top:16px; font-family:'Cinzel', serif; font-size:.78rem; color:var(--creme); letter-spacing:.04em;}
+  .avis-form-box{
+    max-width:640px; margin:80px auto 0; border:1px solid var(--line); padding:44px 46px;
+  }
+  form.avis-form{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  form.avis-form select option{background:var(--nuit);}
 
   /* ---------- Reservation ---------- */
   .reservation{background:var(--nuit-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
@@ -424,7 +429,7 @@
     <div class="hero-facts">
       <div><strong>Buffet midi & soir</strong>7j/7 · dès 22,90€</div>
       <div><strong>Brunch</strong>Dimanche · 11h–15h</div>
-      <div><strong>Soirées thématiques</strong>Vendredi · dès 19h</div>
+      <div><strong>Soirées thématiques</strong>Samedi · dès 19h</div>
       <div><strong>Adresse</strong>Galerie Barnéoud, 13170</div>
     </div>
   </div>
@@ -601,14 +606,14 @@
   <div class="wrap soiree-grid">
     <div>
       <span class="eyebrow">Soirées & Événements</span>
-      <h2 style="font-size:clamp(1.9rem,3.6vw,2.7rem); margin-top:10px; color:var(--creme);">Le vendredi soir prend des allures de fête</h2>
-      <p style="margin-top:18px; color:var(--creme-dim); max-width:52ch;">Chaque vendredi, le Royal Kechmara se pare de ses plus belles lumières pour une soirée thématique : buffet royal, ambiance musicale et ornements orientaux, dans notre salle aux tons bleu nuit et or.</p>
+      <h2 style="font-size:clamp(1.9rem,3.6vw,2.7rem); margin-top:10px; color:var(--creme);">Le samedi soir prend des allures de fête</h2>
+      <p style="margin-top:18px; color:var(--creme-dim); max-width:52ch;">Chaque samedi, le Royal Kechmara se pare de ses plus belles lumières pour une soirée thématique : buffet royal, ambiance musicale et ornements orientaux, dans notre salle aux tons bleu nuit et or.</p>
       <p style="margin-top:14px; color:var(--creme-dim); font-size:.86rem;">Le programme des prochaines soirées est communiqué sur nos réseaux sociaux et affiché en salle. Réservation fortement conseillée.</p>
       <div style="margin-top:30px;"><a href="#reservation" class="btn solid">Réserver ma soirée</a></div>
     </div>
     <div class="soiree-card">
       <div class="eyebrow">Chaque semaine</div>
-      <div class="day">Vendredi Soir</div>
+      <div class="day">Samedi Soir</div>
       <div class="meta">Dès 19h · Buffet royal & ambiance</div>
       <div class="price">34,90€ <span style="font-size:.9rem; color:var(--creme-dim); font-family:'Lato';">/ pers.</span></div>
       <a href="tel:+33780297623" class="btn" style="width:100%; justify-content:center;">07 80 29 76 23</a>
@@ -639,6 +644,39 @@
         <div class="who">Client Royal Kechmara — Google Avis</div>
       </div>
     </div>
+
+    <div class="avis-form-box">
+      <div class="section-head center" style="margin-bottom:30px;">
+        <span class="eyebrow">Votre expérience</span>
+        <h2 style="font-size:1.7rem;">Laissez votre avis</h2>
+        <p>Votre message nous est envoyé directement — nous serons ravis de vous lire.</p>
+      </div>
+      <!--
+        Comme pour la réservation : créez un 2e formulaire sur formspree.io
+        dédié aux avis, puis remplacez YOUR_AVIS_FORM_ID ci-dessous par son ID.
+      -->
+      <form class="resa avis-form" id="avisForm" action="https://formspree.io/f/xljekkrr" method="POST">
+        <div class="field"><label>Nom</label><input type="text" name="Nom" required placeholder="Votre nom"></div>
+        <div class="field">
+          <label>Note</label>
+          <select name="Note" required>
+            <option value="">Sélectionner…</option>
+            <option>★★★★★ Excellent</option>
+            <option>★★★★☆ Très bien</option>
+            <option>★★★☆☆ Correct</option>
+            <option>★★☆☆☆ Moyen</option>
+            <option>★☆☆☆☆ Décevant</option>
+          </select>
+        </div>
+        <div class="field full"><label>Votre avis</label><textarea name="Avis" rows="3" required placeholder="Partagez votre expérience au Royal Kechmara…"></textarea></div>
+        <input type="hidden" name="_subject" value="Nouvel avis client — Royal Kechmara">
+        <div class="full">
+          <button type="submit" class="btn solid">Envoyer mon avis</button>
+          <div class="resa-confirm" id="avisConfirm">Merci pour votre avis — il nous a bien été transmis !</div>
+          <div class="resa-confirm" id="avisError" style="display:none; border-color:#c0654f; color:#c0654f;">Une erreur est survenue, merci de réessayer.</div>
+        </div>
+      </form>
+    </div>
   </div>
 </section>
 
@@ -647,7 +685,7 @@
     <div class="resa-info">
       <span class="eyebrow">Réservation</span>
       <h2 style="font-size:clamp(1.9rem,3.6vw,2.5rem); margin-top:10px; color:var(--creme);">Réservez votre table</h2>
-      <p style="margin-top:16px; color:var(--creme-dim);">Réservation conseillée, en particulier pour le brunch du dimanche et les soirées du vendredi.</p>
+      <p style="margin-top:16px; color:var(--creme-dim);">Réservation conseillée, en particulier pour le brunch du dimanche et les soirées du samedi.</p>
       <a class="phone" href="tel:+33780297623">☏ 07 80 29 76 23</a>
       <ul>
         <li>Confirmation automatique par email</li>
@@ -737,9 +775,8 @@
         </div>
         <a class="btn solid" style="width:fit-content;" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Galerie+Barn%C3%A9oud+13170+Les+Pennes-Mirabeau+Royal+Kechmara">Itinéraire Google Maps</a>
         <div class="social-row">
-          <a href="#" aria-label="Instagram">IG</a>
-          <a href="#" aria-label="TikTok">TT</a>
-          <a href="#" aria-label="Facebook">FB</a>
+          <a href="https://www.instagram.com/royalkechmara_fr?stkn=MWh4NTVhYTF4cGxyNg==" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          <a href="https://www.facebook.com/share/18c38x2Cmk/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
         </div>
       </div>
     </div>
@@ -767,6 +804,8 @@
       <ul>
         <li><a href="tel:+33780297623">07 80 29 76 23</a></li>
         <li><a href="https://www.google.com/maps/search/?api=1&query=Galerie+Barn%C3%A9oud+13170+Les+Pennes-Mirabeau" target="_blank" rel="noopener">Galerie Barnéoud, 13170</a></li>
+        <li><a href="https://www.instagram.com/royalkechmara_fr?stkn=MWh4NTVhYTF4cGxyNg==" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.facebook.com/share/18c38x2Cmk/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a></li>
       </ul>
     </div>
   </div>
@@ -779,7 +818,7 @@
 <div class="popup" id="eventPopup">
   <button class="x" id="popupClose">×</button>
   <span class="eyebrow">Cette semaine</span>
-  <h5>Soirée Thématique — Vendredi</h5>
+  <h5>Soirée Thématique — Samedi</h5>
   <p>Buffet royal, ambiance et lumières dès 19h. Places limitées.</p>
   <a href="#reservation" id="popupCta">Je réserve →</a>
 </div>
@@ -797,36 +836,41 @@
   document.getElementById('drawerClose').addEventListener('click', () => drawer.classList.remove('open'));
   drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => drawer.classList.remove('open')));
 
-  // reservation form -> envoi par email via Formspree (voir commentaire HTML au-dessus du formulaire)
-  const form = document.getElementById('resaForm');
-  const confirmBox = document.getElementById('resaConfirm');
-  const errorBox = document.getElementById('resaError');
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const submitBtn = form.querySelector('button[type="submit"]');
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Envoi…';
-    try {
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      });
-      if (res.ok) {
-        confirmBox.style.display = 'block';
-        errorBox.style.display = 'none';
-        submitBtn.style.display = 'none';
-        form.reset();
-      } else {
-        throw new Error('send failed');
+  // envoi par email via Formspree (voir commentaires HTML au-dessus de chaque formulaire)
+  function wireFormspree(formId, confirmId, errorId, resetLabel){
+    const form = document.getElementById(formId);
+    if(!form) return;
+    const confirmBox = document.getElementById(confirmId);
+    const errorBox = document.getElementById(errorId);
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = form.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Envoi…';
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          confirmBox.style.display = 'block';
+          errorBox.style.display = 'none';
+          submitBtn.style.display = 'none';
+          form.reset();
+        } else {
+          throw new Error('send failed');
+        }
+      } catch (err) {
+        errorBox.style.display = 'block';
+        confirmBox.style.display = 'none';
+        submitBtn.disabled = false;
+        submitBtn.textContent = resetLabel;
       }
-    } catch (err) {
-      errorBox.style.display = 'block';
-      confirmBox.style.display = 'none';
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Envoyer la demande';
-    }
-  });
+    });
+  }
+  wireFormspree('resaForm', 'resaConfirm', 'resaError', 'Envoyer la demande');
+  wireFormspree('avisForm', 'avisConfirm', 'avisError', 'Envoyer mon avis');
 
   // footer year
   document.getElementById('yr').textContent = new Date().getFullYear();
