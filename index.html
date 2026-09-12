@@ -278,21 +278,12 @@
   /* ---------- Map / trouver ---------- */
   .trouver-grid{display:grid; grid-template-columns:1fr 1fr; gap:0; border:1px solid var(--line);}
   .map-box{
-    min-height:420px; position:relative; overflow:hidden;
-    background:
-      repeating-linear-gradient(0deg, rgba(217,177,83,.06) 0 1px, transparent 1px 64px),
-      repeating-linear-gradient(90deg, rgba(217,177,83,.06) 0 1px, transparent 1px 64px),
-      var(--nuit-2);
-    display:flex; align-items:center; justify-content:center;
+    min-height:420px; position:relative; overflow:hidden; background:var(--nuit-2);
   }
-  .map-pin{
-    text-align:center;
+  .map-box iframe{
+    width:100%; height:100%; min-height:420px; border:0; display:block;
+    filter: grayscale(0.15) contrast(1.05);
   }
-  .map-pin .dot{
-    width:18px; height:18px; border-radius:50%; background:var(--or); margin:0 auto 14px;
-    box-shadow:0 0 0 8px rgba(217,177,83,.15), 0 0 0 20px rgba(217,177,83,.06);
-  }
-  .map-pin .lbl{font-family:'Cinzel', serif; color:var(--or); letter-spacing:.05em; font-size:.85rem;}
   .infos-box{padding:56px 50px; display:flex; flex-direction:column; justify-content:center; gap:26px;}
   .infos-box .row{display:flex; gap:18px; align-items:flex-start;}
   .infos-box .ic{
@@ -726,10 +717,10 @@
   <div class="wrap">
     <div class="trouver-grid">
       <div class="map-box">
-        <div class="map-pin">
-          <div class="dot"></div>
-          <div class="lbl">Galerie Barnéoud, 13170 Les Pennes-Mirabeau</div>
-        </div>
+        <iframe
+          src="https://www.google.com/maps?q=Galerie+Barn%C3%A9oud+13170+Les+Pennes-Mirabeau&output=embed"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Royal Kechmara sur Google Maps"></iframe>
       </div>
       <div class="infos-box">
         <div class="row">
