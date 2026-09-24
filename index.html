@@ -724,13 +724,7 @@
         <div class="field"><label>Date</label><input type="date" name="Date" required></div>
         <div class="field"><label>Heure</label><input type="time" name="Heure" required></div>
         <div class="field full"><label>Nombre de personnes</label>
-          <select name="Nombre de personnes" required>
-            <option value="">Sélectionner…</option>
-            <option>1 – 2 personnes</option>
-            <option>3 – 4 personnes</option>
-            <option>5 – 8 personnes</option>
-            <option>Groupe (9+) — nous contacter</option>
-          </select>
+          <input type="number" name="Nombre de personnes" min="1" max="50" required placeholder="Ex: 4">
         </div>
         <div class="field full"><label>Message (optionnel)</label><textarea name="Message" rows="3" placeholder="Occasion particulière, allergies…"></textarea></div>
         <input type="hidden" name="_subject" value="Nouvelle demande de réservation — Royal Kechmara">
